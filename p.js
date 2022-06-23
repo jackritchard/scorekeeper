@@ -4,19 +4,6 @@ onescore = document.querySelector('.onescore')
 twoscore = document.querySelector('.twoscore')
 reset = document.querySelector('.reset')
 select = document.querySelector('.num')
-let playto = 4
-let total = 0
-let total2 = 0
-let timeswon = 0
-let timeswon2 = 0
-button1.addEventListener('click', () => {
-    total += 1
-    button1 = document.querySelector('.oneplayer')
-button2 = document.querySelector('.twoplayer')
-onescore = document.querySelector('.onescore')
-twoscore = document.querySelector('.twoscore')
-reset = document.querySelector('.reset')
-select = document.querySelector('.num')
 let playto = 2
 let total = 0
 let total2 = 0
@@ -94,4 +81,6 @@ function runningscore() {
     alert(`Player 1 has won ${timeswon} time(s). Player 2 has won ${timeswon2} time(s)`)
    
 }
+
+
 
