@@ -18,20 +18,25 @@ body {
     height: 200px;
     display: flex;
     flex-direction: column;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+    
     border: 1px solid black;
-    border-bottom-left-radius: 13px;
-    border-bottom-right-radius: 13px;
+    transition: 1s box-shadow;
+    
    
+}
+.main:hover{
+    box-shadow: 0px 5px 20px 0px black;
+    transition-delay: 0s;
 }
 h1{
     font-size: 25px;
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
-    border: 1px solid black;
+    font-weight: lighter;
     margin-top: 0px;
-    border-radius: 50px;
-    width: 65%;
+    border-bottom: 1px solid black;
+    width: 80%;
     margin: auto;
     
 }
@@ -39,32 +44,47 @@ h1{
 .early {
     display: flex;
     justify-content: space-around;
+    align-items: flex-end;
     margin-top: 5px;
     
+    width: 260px;
+    position: relative;
+    left: 46px;
+    
     
     
     
 
 
+}
+.playingtoo{
+    position: relative;
+    top: 15px;
+    z-index: 3;
+    
 }
 
 .middle {
+    position: relative;
+    top: -10px;
     display: flex;
     justify-content: space-around;
     font-size: 45px;
-    margin-top: 5px;
+    margin-top: 15px;
     font-variant-numeric: tabular-nums;
+    
 }
 .num {
     position: absolute;
-    top: 145px;
+    top: 20px;
     font-family: 'Courier New', Courier, monospace;
-    text-align: center;
+    right: 120px;
     border: 1px solid white;
-    
-    font-size: 25px;
-    
+    font-size: 22px;
     height: 35px;
+    z-index: 1;
+    width:25%;
+    text-align: center;
     
 }
 
@@ -72,11 +92,15 @@ h1{
     
     height: 25%;
     position: relative;
-    bottom: -24px;
+    bottom: -5px;
+    right: 1.90px;
     display: flex;
    flex-direction: row;
+   width: 101%;
    
-   
+   border-top-left-radius: 100px;
+   border-top-right-radius: 100px;
+   z-index: 2;
    
    
     
@@ -92,25 +116,27 @@ button{
 }
 .player1{
     font-family: 'Courier New', Courier, monospace;
+    position: relative;
 }
 .player2{
     font-family: 'Courier New', Courier, monospace;
 }
 
 .oneplayer {
-    background-color: red;
+    background-color: white;
     margin: 0px;
     text-decoration: none;
     font-size: 15px;
-    color: white;
-    border-width: 0px 0px 1px 1px;
+    color: rgb(253, 92, 92);
+    border-width: 1px 0px 1px 1px;
     border-color: black;
     border-style: solid;
     font-family: 'Courier New', Courier, monospace;
-    border-radius: 100px;
-    border-top-right-radius: 0px;
+    border-radius: 35px;
     border-bottom-right-radius: 0px;
-    
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    transition: .5s background-color;
     
     
     
@@ -118,48 +144,53 @@ button{
 }
 
 .twoplayer {
-    background-color: rgb(70, 116, 254);
-    color: white;
+    background-color: white;
+    color: rgb(95, 201, 236);
     margin: 0px;
     text-decoration: none;
     font-size: 15px;
-    border-width: 0px 1px 1px 0px;
+    border-width: 1px 1px 1px 0px;
     border-color: black;
     border-style: solid;
     font-family: 'Courier New', Courier, monospace;
-    border-radius: 100px;
+    border-radius: 35px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
-    
+    border-bottom-right-radius: 0px;
+    transition: .5s background-color;
     
     
 }
 .reset {
-    background-color: lightgray;
+    background-color: white;
     margin: 0px;
-    border-width: 0px 0px 1px 0px;
+    border-width: 1px 1px 1px 1px;
     border-color: black;
     border-style: solid;
     font-family: 'Courier New', Courier, monospace;
-    
+    transition: .5s background-color;
     
     
 }
 .oneplayer:hover {
-    background-color: darkred;
-    border-color: darkred;
     
-    
+    background-color: rgb(245, 58, 58);
+    color: white;
+    transition-delay: 0s;
     
 }
+    
+    
+
 .twoplayer:hover {
-    background-color: darkblue;
-    border-color: darkblue;
+    background-color: lightblue;
+    color: white;
+    transition-delay: 0s;
     
 }
 .reset:hover {
-    background-color: darkslategrey;
-    border-color: darkslategrey;
+    background-color: black;
+    transition-delay: 0s;
     color: white;
     
     
@@ -171,5 +202,34 @@ button{
 }
 
 .bluewin {
-    color: blue;
+    color: lightblue;
+}
+
+
+
+.winner{
+    visibility: hidden;
+    
+}
+
+.winmove {
+    position: relative;
+    right: 87px;
+    width: 100px;
+}
+
+.winmove2 {
+    position: relative;
+    left: 87px;
+    width: 100px;
+}
+
+.ovrrec {
+    position: relative;
+    top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    
 }
