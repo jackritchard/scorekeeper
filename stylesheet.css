@@ -142,6 +142,7 @@ button{
     
     
     
+    
 }
 
 .twoplayer {
@@ -246,3 +247,10 @@ button{
     background-color: black
     
 }
+
+.smallbutton {
+    box-shadow: none;
+}
+
+
+
