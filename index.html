@@ -15,39 +15,19 @@
 
 <body>
     <div class = "main">
-        <h1>Score Keeper</h1>
+        <h1 id="score">Score</h1>
         <div class = "early">
             <span class = "player1">Player 1</span>
+            <span class = "ovrrec">
+                <span class = "overall"> Overall</span>
+                <span class = "record">0 - 0</span>
+                <span class = "playingtoo">Playing To</span>
+            </span>
             <span class = "player2">Player 2</span>
         </div>
         <div class = "middle">
             <span class = "onescore">0</span>
-            <select name="playto" class="num">
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-                <option value="25">25</option>
-              </select>
+            <input min="1" max = "999"placeholder="11" class = "num" type="number">
             <span class = "twoscore">0</span>
         </div>
         <div class = "end">
@@ -58,6 +38,7 @@
         </div>
     </div>
     </div>
+    
     
 <script src="p.js"></script>
 </body>
