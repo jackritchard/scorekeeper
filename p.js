@@ -4,7 +4,11 @@ onescore = document.querySelector('.onescore')
 twoscore = document.querySelector('.twoscore')
 reset = document.querySelector('.reset')
 select = document.querySelector('.num')
-let playto = 2
+score = document.querySelector('#score')
+record = document.querySelector('.record')
+
+
+let playto = 11
 let total = 0
 let total2 = 0
 let timeswon = 0
@@ -20,21 +24,36 @@ button1.addEventListener('click', () => {
     if (total > total2){
         onescore.classList.add('redwin')
         twoscore.classList.remove('bluewin')
+        
     }else if(total<total2){
         twoscore.classList.add('bluewin')
         onescore.classList.remove('redwin')
+        
     }else if(total === total2){
         twoscore.classList.remove('bluewin')
         onescore.classList.remove('redwin')
+        
     }
 
-    if (total >= playto){
-        total = playto
+    if(total >= playto){
         timeswon += 1
-        alert("Player 1 wins!")
-        runningscore()
-        re()
+        record.textContent = `${timeswon} - ${timeswon2}`
+        score.textContent = "Winner"
+        score.classList.add('winmove')
+        button1.classList.add('winner')
+        button2.classList.add('winner')
+        button1.removeEventListener('click')
+        
+
+        
+        
+        
+        
+        
+        
+        
     }
+    
     
 })
 
@@ -47,17 +66,27 @@ button2.addEventListener('click', () => {
     }else if(total<total2){
         twoscore.classList.add('bluewin')
         onescore.classList.remove('redwin')
+        
     }else if(total === total2){
         twoscore.classList.remove('bluewin')
         onescore.classList.remove('redwin')
+        
     }
     if (total2 >= playto){
-        total2 = playto
         timeswon2 += 1
-        alert("Player 2 wins!")
-        runningscore()
-        re()
+        record.textContent = `${timeswon} - ${timeswon2}`
+        score.textContent = "Winner"
+        score.classList.add('winmove2')
+        button1.classList.add('winner')
+        button2.classList.add('winner')
+        button2.removeEventListener('click')
+        
+        
     }
+    
+    
+    
+    
     
 })
 
@@ -70,17 +99,15 @@ function re() {
     total2 = 0 
     twoscore.classList.remove('bluewin')
     onescore.classList.remove('redwin')
+    button1.classList.remove('winner')
+    button2.classList.remove('winner')
+    score.classList.remove('winmove')
+    score.classList.remove('winmove2')
+    score.textContent = "Score"
     }
 select.addEventListener('change', (val) => {
     playto = parseInt(select.value)
     
     
 })
-
-function runningscore() {
-    alert(`Player 1 has won ${timeswon} time(s). Player 2 has won ${timeswon2} time(s)`)
-   
-}
-
-
 
