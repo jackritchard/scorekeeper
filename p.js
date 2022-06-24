@@ -13,8 +13,8 @@ let total = 0
 let total2 = 0
 let timeswon = 0
 let timeswon2 = 0
-let att = document.createAttribute("style")
-att.value = "color:red";
+
+
 
 
 function endflash () {
@@ -22,9 +22,79 @@ function endflash () {
         reset.classList.toggle('endflash')
     }, 600)
     } 
+function smallbutton () {
+    window.holdinc = window.setInterval(function(){
+        total += 1
+        onescore.textContent = `${total}`
+        if (total > total2){
+            onescore.classList.add('redwin')
+            twoscore.classList.remove('bluewin')
+            
+        }else if(total<total2){
+            twoscore.classList.add('bluewin')
+            onescore.classList.remove('redwin')
+            
+        }else if(total === total2){
+            twoscore.classList.remove('bluewin')
+            onescore.classList.remove('redwin')
+            
+        }if(total >= playto){
+            window.clearInterval(holdinc)
+            button2.disabled = true
+            button1.disabled = true
+            timeswon += 1
+            record.textContent = `${timeswon} - ${timeswon2}`
+            score.textContent = "Winner"
+            score.classList.add('winmove')
+            button1.classList.add('winner')
+            button2.classList.add('winner')
+            endflash()
+            }
     
+    }, 600)
+}
+
+function twoplay() {
+    window.holdinc2 = window.setInterval(function(){
+        total2 += 1
+        twoscore.textContent = `${total2}`
+        if (total > total2){
+            onescore.classList.add('redwin')
+            twoscore.classList.remove('bluewin')
+            
+        }else if(total<total2){
+            twoscore.classList.add('bluewin')
+            onescore.classList.remove('redwin')
+            
+        }else if(total === total2){
+            twoscore.classList.remove('bluewin')
+            onescore.classList.remove('redwin')
+            
+        }if(total2 >= playto){
+            window.clearInterval(holdinc2)
+            button2.disabled = true
+            button1.disabled = true
+            timeswon2 += 1
+            record.textContent = `${timeswon} - ${timeswon2}`
+            score.textContent = "Winner"
+            score.classList.add('winmove2')
+            button1.classList.add('winner')
+            button2.classList.add('winner')
+            endflash()
+            }
+    
+    }, 600)
+}
 
 
+button2.addEventListener('mousedown', twoplay)
+button1.addEventListener('mousedown', smallbutton)
+button2.addEventListener('mouseup', function(){
+    window.clearInterval(holdinc2)
+})
+button1.addEventListener('mouseup', function(){
+    window.clearInterval(holdinc)
+})
 button1.addEventListener('click', () => {
     total += 1
     onescore.textContent = `${total}`
@@ -96,6 +166,7 @@ button2.addEventListener('click', () => {
         button1.classList.add('winner')
         button2.classList.add('winner')
         endflash()
+
         
         
         
@@ -125,9 +196,15 @@ function re() {
     button2.disabled = false
     window.clearInterval(interval)
     reset.classList.remove('endflash')
+    
     }
 select.addEventListener('change', (val) => {
     playto = parseInt(select.value)
     
     
 })
+
+
+
+
+    
