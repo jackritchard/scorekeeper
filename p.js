@@ -17,6 +17,13 @@ let att = document.createAttribute("style")
 att.value = "color:red";
 
 
+function endflash () {
+    window.interval = window.setInterval(function(){
+        reset.classList.toggle('endflash')
+    }, 600)
+    } 
+    
+
 
 button1.addEventListener('click', () => {
     total += 1
@@ -36,13 +43,20 @@ button1.addEventListener('click', () => {
     }
 
     if(total >= playto){
+        button2.disabled = true
+        button1.disabled = true
         timeswon += 1
         record.textContent = `${timeswon} - ${timeswon2}`
         score.textContent = "Winner"
         score.classList.add('winmove')
         button1.classList.add('winner')
         button2.classList.add('winner')
-        button1.removeEventListener('click')
+        endflash()
+        }
+        }
+        
+
+        
         
 
         
@@ -52,10 +66,10 @@ button1.addEventListener('click', () => {
         
         
         
-    }
     
     
-})
+    
+)
 
 button2.addEventListener('click', () => {
     total2 += 1
@@ -73,13 +87,16 @@ button2.addEventListener('click', () => {
         
     }
     if (total2 >= playto){
+        button2.disabled = true
+        button1.disabled = true
         timeswon2 += 1
         record.textContent = `${timeswon} - ${timeswon2}`
         score.textContent = "Winner"
         score.classList.add('winmove2')
         button1.classList.add('winner')
         button2.classList.add('winner')
-        button2.removeEventListener('click')
+        endflash()
+        
         
         
     }
@@ -104,10 +121,13 @@ function re() {
     score.classList.remove('winmove')
     score.classList.remove('winmove2')
     score.textContent = "Score"
+    button1.disabled = false
+    button2.disabled = false
+    window.clearInterval(interval)
+    reset.classList.remove('endflash')
     }
 select.addEventListener('change', (val) => {
     playto = parseInt(select.value)
     
     
 })
-
