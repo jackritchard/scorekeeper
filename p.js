@@ -51,7 +51,7 @@ function smallbutton () {
             endflash()
             }
     
-    }, 600)
+    }, 400)
 }
 
 function twoplay() {
@@ -83,7 +83,7 @@ function twoplay() {
             endflash()
             }
     
-    }, 600)
+    }, 400)
 }
 
 
@@ -207,4 +207,5 @@ select.addEventListener('change', (val) => {
 
 
 
+    
     
