@@ -221,7 +221,7 @@ button{
 .winner{
     visibility: hidden;
     opacity: 0;
-    transition: visibility .8s 0s, opacity .8s linear;
+    transition: visibility .6s 0s, opacity .4s linear;
     
     
 }
@@ -262,6 +262,8 @@ button{
 }
 
 
-
+.num::placeholder{
+    color: white;
+}
 
 
