@@ -82,6 +82,7 @@ h1{
     top: 20px;
     font-family: 'Courier New', Courier, monospace;
     right: 120px;
+    border: 1px solid black;
     
     font-size: 22px;
     height: 35px;
@@ -93,6 +94,7 @@ h1{
     
     
 }
+
 
 .end {
     
@@ -258,5 +260,8 @@ button{
 .smallbutton {
     box-shadow: none;
 }
+
+
+
 
 
